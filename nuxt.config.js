@@ -68,5 +68,18 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    babel: {
+      sourceType: 'unambiguous',
+      presets: ['@babel/preset-env', '@vue/babel-preset-jsx'],
+      plugins: [
+          '@babel/plugin-syntax-dynamic-import',
+          [
+              '@babel/plugin-transform-runtime',
+              {
+                  regenerator: true,
+              },
+          ],
+      ],
+  },
   }
 }
